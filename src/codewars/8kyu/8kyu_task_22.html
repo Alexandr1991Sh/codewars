@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+// функция считает общее количество строчных букв в строке
+
+
+function lowercaseCount(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toLowerCase() && str[i] !== str[i].toUpperCase()) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(lowercaseCount("abcABC123"))
+
+</script>
+</body>
+</html>

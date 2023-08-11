@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+// функция удаляет дубликаты из массива
+function distinct(a) {
+  let result = []
+  return result = result = a.filter((number, index, numbers) =>numbers.indexOf(number) === index)
+}
+
+
+console.log(distinct([1,1,2]))
+
+</script>
+</body>
+</html>

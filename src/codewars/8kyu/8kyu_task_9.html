@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    let minNum = args[0];
+    for (let i = 1; i < args.length; i++) {
+      if (args[i] < minNum) {
+        minNum = args[i];
+      }
+    }
+    return minNum;
+  }
+}
+
+const finder = new SmallestIntegerFinder();
+console.log(finder.findSmallestInt([78, 56, 232, 12, 8]))
+
+</script>
+</body>
+</html>

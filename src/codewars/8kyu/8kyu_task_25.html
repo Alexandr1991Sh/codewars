@@ -7,14 +7,14 @@
 <body>
 <script>
 
-// функция переворачивает строку
+    // функция
 
+    function chromosomeCheck(sperm) {
+     return    sperm === 'XY' ? "Congratulations! You're going to have a son."
+       :  "Congratulations! You're going to have a daughter."
+    }
 
-function solution(str){
-  return str.split('').reverse().join('')
-}
-
-console.log(solution('world'))
+    console.log(chromosomeCheck('XY'))
 
 </script>
 </body>

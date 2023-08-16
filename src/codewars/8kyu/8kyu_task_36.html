@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // максимально сократить код
+    function describeAge(age) {
+  if (age <= 12) {
+    return "You're a(n) kid";
+  } else if (age >= 13 && age <= 17) {
+    return "You're a(n) teenager";
+  } else if (age >= 18 && age <= 64) {
+    return "You're a(n) adult";
+  } else {
+    return "You're a(n) elderly";
+  }
+}
+
+
+//     const describeAge = (age) => {
+//         let a= "You're a(n) "
+//   if (age <= 12) {
+//     return `${a}kid`;
+//   } else if (age >= 13 && age <= 17) {
+//     return `${a}teenager` ;
+//   } else if (age >= 18 && age <= 64) {
+//     return `${a}adult`;
+//   } else {
+//     return `${a}elderly`;
+//   }
+// }
+
+
+
+let describeAge = (a) => {let s = "You're a(n) " 
+    return a <= 12 ? `${s}kid`:a <= 17 ? `${s}teenager`:a <= 64 ? `${s}adult`:`${s}elderly`;
+}
+
+
+
+console.log(describeAge(10))
+
+</script>
+</body>
+</html>

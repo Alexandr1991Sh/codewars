@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // функция возводит в квадрат каждое переданное ей число, а затем суммировала результаты
+    function squareSum(numbers){
+      let result = 0
+  for(let i = 0; i < numbers.length; i++){
+   result += numbers[i] * numbers[i]
+  }
+      return result
+  }
+
+
+console.log(squareSum([0, 3, 4, 5]))
+
+</script>
+</body>
+</html>

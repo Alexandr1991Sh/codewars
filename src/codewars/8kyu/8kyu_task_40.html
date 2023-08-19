@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+// функция которая принимает список
+//  строк в качестве аргумента и возвращает отфильтрованный с
+//  писок, содержащий те же элементы, но с удаленными «гусями».
+
+function gooseFilter (birds) {
+  let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  
+return birds.filter(el =>!geese.some(e => e === el))
+};
+
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+
+</script>
+</body>
+</html>

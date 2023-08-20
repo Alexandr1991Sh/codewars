@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+// функция находит разницу объемов 
+
+function findDifference(a, b) {
+return Math.abs(a.reduce((acc, res) => acc * res) - b.reduce((acc, res) => acc * res))
+}
+
+
+console.log(findDifference([16,2,7], [24,22,22]))
+
+</script>
+</body>
+</html>

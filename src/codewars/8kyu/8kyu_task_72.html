@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // функция Учитывая массив целых чисел в виде строк и чисел,
+    // возвращает сумму значений массива, как если бы все они были числами.
+
+    function sumMix(x) {
+        return x.reduce((val, acc) => {
+            return val + +(acc)
+        }, 0)
+    }
+
+    console.log(sumMix([9, 3, '7', '3']))
+
+</script>
+</body>
+</html>

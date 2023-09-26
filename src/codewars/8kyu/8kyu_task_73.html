@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // функция
+
+    function validateUsr(username) {
+        const regex = /^[a-z0-9_]{4,16}$/;
+        return regex.test(username);
+    }
+
+    console.log(validateUsr('as'))
+
+
+</script>
+</body>
+</html>

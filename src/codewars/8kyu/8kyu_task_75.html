@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // функция
+
+    function mergeArrays(arr1, arr2) {
+        let newArray = arr1.concat(arr2);
+        return [...new Set(newArray.sort((a, b) => a - b))]
+    }
+
+    console.log(mergeArrays([1, 2, 3, 4], [5, 6, 7, 8]))
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // функция
+
+    // function mergeArrays(a, b) {
+    //     const newArr = new Set([...a, ...b])
+    //     return [...newArr].sort((x, y) => x - y)
+    // }
+
+    function mergeArrays(a, b) {
+        return  [...new Set([...a, ...b])].sort((x, y) => x - y)
+    }
+
+
+    console.log(mergeArrays([2, 4, 8], [2, 4, 6]))
+
+
+</script>
+</body>
+</html>

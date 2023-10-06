@@ -9,17 +9,9 @@
 
     // функция
 
-    // function mergeArrays(a, b) {
-    //     const newArr = new Set([...a, ...b])
-    //     return [...newArr].sort((x, y) => x - y)
-    // }
+    correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
 
-    function mergeArrays(a, b) {
-        return  [...new Set([...a, ...b])].sort((x, y) => x - y)
-    }
-
-
-    console.log(mergeArrays([2, 4, 8], [2, 4, 6]))
+    console.log(correct("51NGAP0RE"))
 
 
 </script>

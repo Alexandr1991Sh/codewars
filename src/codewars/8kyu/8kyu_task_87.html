@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // функция
+
+    function calculateTip(amount, rating) {
+        let result = 0;
+        switch (rating.toLowerCase()) {
+            case 'terrible':
+                result = 0;
+                break;
+            case 'poor':
+                result = amount * 0.05;
+                break;
+            case 'good':
+                result = amount * 0.10;
+                break;
+            case 'great':
+                result = amount * 0.15;
+                break;
+            case 'excellent':
+                result = amount * 0.20;
+                break;
+            default:
+               return 'Rating not recognised'
+        }
+        return Math.ceil(result);
+    }
+
+    console.log(calculateTip(26, "good"))
+
+
+</script>
+</body>
+</html>

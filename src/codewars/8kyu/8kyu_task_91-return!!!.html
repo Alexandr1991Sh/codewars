@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function sumArray(array) {
+    //     if (array.length < 3) {
+    //         return 0
+    //     }
+    //     const min = Math.min(...array)
+    //     const max = Math.max(...array)
+    //     let result = 0
+    //     return array.reduce((acc, value) => {
+    //         if (value !== max && value !== min) {
+    //             return result += acc + value
+    //         }
+    //         return result
+    //     }, 0)
+    // }
+
+    function sumArray(array) {
+        if (array == null) {
+            return 0;
+        } else if (array.length < 2) {
+            return 0;
+        } else {
+            array = array.sort(function(a,b) {return a - b;});
+            let total = 0;
+            for (let i = 1; i < array.length - 1; i++) {
+                total += array[i];
+            }
+            return total;
+        }
+    }
+
+
+    console.log(sumArray([-6, -20, -1, -10, -12]))
+
+
+</script>
+</body>
+</html>

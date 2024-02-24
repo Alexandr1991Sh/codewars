@@ -27,6 +27,7 @@ function App() {
             {/*    playCounter2((actual)=> actual - 1)*/}
             {/*}}>-*/}
             {/*</button>*/}
+
         </div>
     );
 }

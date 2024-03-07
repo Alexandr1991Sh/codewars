@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class God {
+        /**
+         * @returns Human[]
+         */
+        static create() {
+            return [new Man, new Woman]
+        }
+    }
+
+    class Human {}
+    class Man extends Human {}
+    class Woman extends Human {}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // function sumArray(array) {
+    //
+    //     if (!array || array.length < 3) {
+    //         return 0
+    //     }
+    //
+    //     let min = array.reduce((x, y) => Math.min(x, y))
+    //     let max = array.reduce((x, y) => Math.max(x, y))
+    //
+    //     let minCount = 0
+    //     let maxCount = 0
+    //
+    //     return array.reduce((acc, value) => {
+    //         if (value === min) {
+    //             minCount++
+    //             if (minCount > 1) {
+    //                 return acc
+    //             }
+    //         } else if (value === max) {
+    //             maxCount++
+    //             if (maxCount > 1) {
+    //                 return acc
+    //             }
+    //         }
+    //         return acc + value
+    //     }, 0)
+    // }
+
+
+    function sumArray(array) {
+        if (!array || array.length <  3) {
+            return  0;
+        }
+
+        let min = array.reduce((x, y) => Math.min(x, y));
+        let max = array.reduce((x, y) => Math.max(x, y));
+
+        let minCount =  0;
+        let maxCount =  0;
+
+        return array.reduce((acc, value) => {
+            if (value === min) {
+                minCount++;
+                if (minCount >  1) {
+                    return acc; // Исключаем минимальное значение, если оно встречается второй раз
+                }
+            } else if (value === max) {
+                maxCount++;
+                if (maxCount >  1) {
+                    return acc; // Исключаем максимальное значение, если оно встречается второй раз
+                }
+            }
+            return acc + value; // Добавляем значение к сумме
+        },  0);
+    }
+
+    console.log(sumArray([3, 5]))                     //0
+    console.log(sumArray([3]))                        //0
+    console.log(sumArray(null))                       //0
+    console.log(sumArray([]))                         //0
+    console.log(sumArray([-6, -20, -1, -10, -12]))    //-28
+    console.log(sumArray([6, 2, 1, 8, 10]))           //16
+    console.log(sumArray([0, 1, 6, 10, 10]))        //17
+
+</script>
+</body>
+</html>

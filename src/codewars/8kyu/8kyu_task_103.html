@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function howMuchILoveYou(nbPetals) {
+        switch (nbPetals % 6) {
+            case  1:
+                return "I love you"
+            case   2:
+                return "a little"
+            case   3:
+                return "a lot"
+            case  4:
+                return "passionately"
+            case  5:
+                return "madly"
+            case  6:
+                return "not at all"
+            case 0:
+                return "not at all";
+        }
+    }
+
+    console.log(howMuchILoveYou(8))  // "I love you"
+
+
+</script>
+</body>
+</html>

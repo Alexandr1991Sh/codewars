@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function grow(x) {
+    //     let res = []
+    //     for (let i = 0; i < x.length; i++) {
+    //         res = x[i] * i
+    //     }
+    //     return res
+    // }
+
+
+    function grow(x) {
+        return x.reduce((acc, value) => acc * value)
+    }
+
+    console.log(grow([4, 1, 1, 1, 4]))  //  16
+
+</script>
+</body>
+</html>

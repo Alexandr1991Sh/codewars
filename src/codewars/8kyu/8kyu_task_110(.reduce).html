@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    const arr = [1, 2, 3, 4, 5]
+
+    let sumFor = 0
+    for (let i = 0; i < arr.length; i++) {
+        sumFor = sumFor + arr[i]
+    }
+    console.log(sumFor)  //  15
+
+    let maxFor = arr[0]
+    let indexFor = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maxFor) {
+            maxFor = arr[i]
+            indexFor = i
+        }
+    }
+    console.log('maxFor-', maxFor, 'indexFor-', indexFor) // 5, 4
+
+
+    const sumReduce = arr.reduce((prev, item) => prev + item)
+    console.log(sumReduce)  //  16
+
+    const maxReduce = arr.reduce((prev, item, index) => {
+        if (prev[1] < item) {
+            return [index, item]
+        } else {
+            return prev
+        }
+    }, [0, arr[0]])
+    console.log('maxReduce-', maxReduce,)  // 4, 5
+
+    //==============================================================================================
+    const array1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    const array1Reduce = array1.reduce((prev, item) => prev.concat(item), [])
+    console.log(array1Reduce)  // [1,2,3,4,5,6,7,8,9]
+
+    //=========================================================================================
+    const people = [
+        {name: 'Alexandr', age: 33, budget: 5000000},
+        {name: 'Mihail', age: 23, budget: 500},
+        {name: 'Slava', age: 19, budget: 50},
+        {name: 'Roman', age: 48, budget: 5}
+    ]
+    const sumBudgetReduce = people.reduce((prev, item) => prev + item.budget, 0)
+    console.log(sumBudgetReduce)   //  5000555
+
+    //==========================================================================================
+    const array2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    const array2SumReduce = array2.reduce((prev, item) => {
+        return prev.concat(item)
+    }, []).reduce((prev, item) => prev + item, 0)
+    console.log(array2SumReduce)  // 45
+
+
+</script>
+</body>
+</html>

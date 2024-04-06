@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // function well(x) {
+    //     let count = 0
+    //     let result = ''
+    //     for (let i = 0; i < x.length; i++) {
+    //         if (x[i] === "good") {
+    //             count += 1
+    //         }
+    //     }
+    //     if (count === 0) {
+    //         result += 'Fail!'
+    //     } else if (count > 0 && count <= 2) {
+    //         result += 'Publish!'
+    //     } else if (count >= 2) {
+    //         result += 'I smell a series!'
+    //     }
+    //     return result
+    // }
+
+    function well(x) {
+        const goodCount = x.filter(el => el === 'good').length
+        return goodCount < 1 ? 'Fail!' :
+            goodCount < 3 ? 'Publish!' : 'I smell a series!'
+    }
+
+    console.log(well(['bad', 'bad', 'bad']))                    //'Fail!'
+    console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))     //'Publish!'
+    console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))     //'I smell a series!'
+    console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))     //'I smell a series!'
+    console.log(well(["bad", "bad", "good", "bad", "bad", "bad", "bad", "bad", "good"]))
+
+
+</script>
+</body>
+</html>

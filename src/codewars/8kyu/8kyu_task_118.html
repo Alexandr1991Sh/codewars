@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function arrayPlusArray(arr1, arr2) {
+    //     let res1 = arr1.reduce((acc, value) => {
+    //         return  acc + value
+    //     }, 0)
+    //
+    //     let res2 = arr2.reduce((acc, value) => {
+    //         return acc + value
+    //     }, 0)
+    //     return res1 + res2
+    // }
+
+    function arrayPlusArray(arr1, arr2) {
+        let res1 = 0
+        let res2 = 0
+        for (let i = 0; i < arr1.length; i++) {
+            res1 += arr1[i]
+        }
+
+        for (let i = 0; i < arr2.length; i++) {
+            res1 += arr2[i]
+        }
+        return res1 + res2
+    }
+
+
+    console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]))  // 21
+
+</script>
+</body>
+</html>

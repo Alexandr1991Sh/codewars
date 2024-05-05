@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function squareSum(numbers) {
+    //     let res = 0
+    //     for (let i = 0; i < numbers.length; i++) {
+    //          res +=  numbers[i] * numbers[i]
+    //     }
+    //     return res
+    // }
+
+    function squareSum(numbers) {
+        return numbers.reduce((acc, value) => acc + value * value, 0)
+    }
+
+
+    console.log(squareSum([0, 3, 4, 5]))        // 50
+
+
+</script>
+</body>
+</html>

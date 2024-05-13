@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Кирка делается из 3-х «Булыжников» и 2-х «Палок».
+    // Дерево можно превратить в 4 палки!
+    function stonePick(arr) {
+        let result = 0
+        let Sticks = 0  //Палочки
+        let Cobblestone = 0 //Булыжник
+        let Wood = 0    //Дерево
+        for (let i = 0; i < arr.length; i++) {
+            Sticks += arr[i] === 'Sticks'
+            Cobblestone += arr[i] === 'Cobblestone'
+            Wood += arr[i] === 'Wood'
+            Sticks += Wood * 4
+        }
+        Sticks += Wood * 4
+        while (Sticks >= 2 && Cobblestone >= 3) {
+            Sticks -= 2
+            Cobblestone -= 3
+            result++
+        }
+        return result
+    }
+
+    console.log(stonePick(["Sticks", "Sticks", "Cobblestone", "Cobblestone", "Cobblestone"]))  //1
+
+
+</script>
+</body>
+</html>

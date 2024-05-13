@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function compareTrash(trash1, trash2) {
+    //     let trash1Typeof = typeof (trash1)
+    //     let trash2Typeof = typeof (trash2)
+    //     let res = ''
+    //     if (Object.is(trash1Typeof, trash2Typeof)) {
+    //         res += true
+    //     } else {
+    //         res += false
+    //     }
+    //     return res
+    // }
+
+    function compareTrash(trash1, trash2) {
+        if (trash1 == trash2) {
+            return typeof trash1 == typeof trash2 ? true : false
+        }
+        return false
+    }
+
+    console.log(compareTrash([], false))      // false
+    console.log(compareTrash(0, false))       // false
+    console.log(compareTrash(null, null))     // true
+    console.log(compareTrash('', ''))         // true
+
+</script>
+</body>
+</html>

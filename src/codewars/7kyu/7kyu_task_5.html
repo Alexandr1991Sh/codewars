@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function secondSymbol(s, symbol) {
+        let res = []
+        let sSplit = s.split('')
+        for (let i = 0; i <= sSplit.length; i++) {
+            if (sSplit[i] === symbol) {
+                res.push(i)
+            }
+        }
+        return res.length >= 2 ? res[1] : -1
+    }
+
+
+    console.log(secondSymbol('Hello world!!!', 'l'))  // 3
+    console.log(secondSymbol('Hello world!!!', 'o'))  // 7
+    console.log(secondSymbol('Hello world!!!', 'A'))  //-1
+    console.log(secondSymbol('Hello', '!'))           //-1
+
+</script>
+</body>
+</html>

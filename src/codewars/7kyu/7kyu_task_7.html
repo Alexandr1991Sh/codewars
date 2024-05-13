@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function toIndustrial(time) {
+        let res = time / 60
+        return res.toFixed(2)
+    }
+
+    function toNormal(time) {
+        let hours = Math.floor(time)
+        let minutes = Math.floor((time - hours) * 60)
+        return `${hours}:${minutes< 10 ? '0' + minutes : minutes}`
+    }
+
+    console.log(toIndustrial(105))  // 1.75
+    console.log(toIndustrial(2))    // 0.03
+    console.log(toNormal(0.33))     // "0:20"
+    console.log(toNormal(1.50))     // "1:30"
+
+</script>
+</body>
+</html>

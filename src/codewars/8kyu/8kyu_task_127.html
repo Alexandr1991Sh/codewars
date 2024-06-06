@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function feast(beast, dish) {
+    //     let resBeast = beast.split('')
+    //     let resDish = dish.split('')
+    //
+    //     let resBeastOne = resBeast[0]
+    //     let resBeastTwo = resBeast.at(-1)
+    //
+    //     let resDishOne = resDish[0]
+    //     let resDishTwo = resDish.at(-1)
+    //
+    //
+    //     return resBeastOne === resDishOne && resBeastTwo === resDishTwo
+    // }
+
+    // function feast(beast, dish) {
+    //     let resBeast = beast.split('')
+    //     let resDish = dish.split('')
+    //
+    //     return resBeast[0] === resDish[0] && resBeast.at(-1) === resDish.at(-1)
+    // }
+
+    function feast(beast, dish) {
+        return beast.split('')[0] === dish.split('')[0] && beast.split('').at(-1) === dish.split('').at(-1)
+    }
+
+    console.log(feast("great blue heron", "garlic naan"))       // true
+    console.log(feast("chickadee", "chocolate cake"))           // true
+    console.log(feast("brown bear", "bear claw"))               // false
+
+</script>
+</body>
+</html>

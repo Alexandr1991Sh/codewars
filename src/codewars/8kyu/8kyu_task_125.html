@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const countSheep = function (num) {
+        let numArr = num.toString().split('')
+        let result = ''
+        for (let i = 1; i <= num; i++) {
+            result += i
+            for (let j = 0; j < numArr.length; j++) {
+                result += ' sheep...'
+            }
+        }
+        return result
+    }
+
+    console.log(countSheep(1))   // "1 sheep..."
+    console.log(countSheep(2))   // "1 sheep...2 sheep..."
+    console.log(countSheep(3))   // "1 sheep...2 sheep...3 sheep..."
+    console.log(countSheep(9))   // "1 sheep...2 sheep...3 sheep..."
+
+</script>
+</body>
+</html>

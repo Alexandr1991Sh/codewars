@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function defineSuit(card) {
+        let suit = card.slice(-1)
+        switch (suit) {
+            case '♣': {
+                return 'clubs'
+            }
+            case  '♦': {
+                return 'diamonds'
+            }
+            case  '♥': {
+                return 'hearts'
+            }
+            case  '♠': {
+                return 'spades'
+            }
+        }
+    }
+
+    console.log(defineSuit('3♣'))      // 'clubs'
+    console.log(defineSuit('3♦'))      // 'diamonds
+    console.log(defineSuit('3♥'))     // 'hearts
+    console.log(defineSuit('3♠'))     // 'spades
+
+</script>
+</body>
+</html>

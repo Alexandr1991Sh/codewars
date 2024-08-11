@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function usdcny(usd) {
+        let res = usd * (6.75).toFixed(2)
+        return res.toFixed(2) + ' Chinese Yuan'
+    }
+
+    console.log(usdcny(15))     //'101.25 Chinese Yuan'
+    console.log(usdcny(465))     //'3138.75 Chinese Yuan'
+    console.log(usdcny(5846))     //'39460.50 Chinese Yuan'
+
+
+</script>
+</body>
+</html>

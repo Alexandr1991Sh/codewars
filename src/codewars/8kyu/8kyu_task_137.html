@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // function century(year) {
+    //     return Math.ceil(year / 100)
+    // }
+
+    function century(year) {
+        let century = 0;
+        for (let i = 0; i < year; i++) {
+            if (i % 100 === 0) {
+                century++
+            }
+        }
+        return century;
+    }
+
+    console.log(century(1705))      // 18
+
+
+</script>
+</body>
+</html>

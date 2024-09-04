@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function contamination(text, char) {
+         let textLength = text.length
+        return char.repeat(textLength)
+    }
+
+    console.log(contamination("abc", "z"))          // "zzz"
+    console.log(contamination("", "z"))             // ""
+    console.log(contamination("_3ebzgh4", "&"))     // "&&&&&&&&"
+
+
+</script>
+</body>
+</html>

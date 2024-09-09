@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function excludingVatPrice(price) {
+        if(price===null){
+            return -1
+        }else {
+          return   Math.round(price / 1.15 *100)/100
+        }
+    }
+
+    console.log(excludingVatPrice(123))     // 106.96
+    console.log(excludingVatPrice(230))     // 200.00
+
+</script>
+</body>
+</html>

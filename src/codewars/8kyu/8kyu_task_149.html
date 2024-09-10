@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function ensureQuestion(s) {
+        if (s.endsWith('?')) {
+            return s
+        } else {
+            return s + '?'
+        }
+    }
+
+    console.log(ensureQuestion(''))     // '?'
+    console.log(ensureQuestion('Yes'))  // 'Yes?'
+    console.log(ensureQuestion('No'))   // 'No?'
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function simpleMultiplication(number) {
+    //     if (number % 2 === 0) {
+    //         return number * 8
+    //     } else {
+    //         return number * 9
+    //     }
+    // }
+
+    // const simpleMultiplication = number => number % 2 === 0 ? number * 8 : number * 9
+
+    function simpleMultiplication(n) {
+        return n * (n / 2 ? 9 : 8)
+    }
+
+
+    console.log(simpleMultiplication(2))      // 16
+    console.log(simpleMultiplication(1))      // 9
+
+
+</script>
+</body>
+</html>

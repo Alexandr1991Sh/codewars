@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function findDifference(a, b) {
+        let a1 = a.reduce((acc, res) => acc * res)
+        let a2 = b.reduce((acc, res) => acc * res)
+        return a2 < a1 ? a1 - a2 : a2 - a1
+    }
+
+    console.log(findDifference([3, 2, 5], [1, 4, 4]))       // 14
+    console.log(findDifference([9, 7, 2], [5, 2, 2]))       // 106
+
+
+</script>
+</body>
+</html>

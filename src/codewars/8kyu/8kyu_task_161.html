@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function remove(s, n) {
+        let result = "";
+        let count = 0;
+
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] !== "!") {
+                result += s[i];
+            } else {
+                count++;
+                if (count > n) {
+                    result += "!";
+                }
+            }
+        }
+
+        return result;
+    }
+
+    console.log(remove("!Hi!", 1)); // "Hi!"
+    console.log(remove("!!!Hi !!hi!!! !hi", 100)); // "Hi hi hi"
+
+
+
+</script>
+</body>
+</html>

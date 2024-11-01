@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function fakeBin(x) {
+    //     let numX = x.split('').map(str => +str)
+    //     for (let i = 0; i < numX.length; i++) {
+    //         if (numX[i] < 5) {
+    //             numX[i] = 0
+    //         } else {
+    //             numX[i] = 1
+    //         }
+    //     }
+    //     return numX.join('')
+    // }
+
+    function fakeBin(x) {
+        return x.split('').map(el => el < 5 ? 0 : 1).join()
+    }
+
+    console.log(fakeBin('22445346'))
+
+</script>
+</body>
+</html>

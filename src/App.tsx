@@ -1,36 +1,33 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
-    //useState
-    let [playerCounter1, playCounter1] = useState(10)
-    let [playerCounter2, playCounter2] = useState(10)
+    let [clock, setClock] = useState('')
+    console.log('App')
+    let hours = (new Date()).getHours()
+    let minutes = (new Date()).getMinutes()
+    let seconds = (new Date()).getSeconds()
+
+    // useEffect(() => {
+    //     console.log('setInterval')
+    //     setInterval(() => {
+    //         setClock(`${hours} : ${minutes} : ${seconds}`)
+    //     },1000)
+    // }, []);
+
+    // setInterval(() => {
+    //     console.log('setInterval')
+    //     setClock(`${hours} : ${minutes} : ${seconds}`)
+    // },1000)
 
     return (
         <div className="App">
-            {/*<div>Alex</div>*/}
-            {/*<div>{playerCounter1}</div>*/}
-            {/*<button onClick={() => {*/}
-            {/*    playCounter1((actual)=> actual + 1)*/}
-            {/*}}>+*/}
-            {/*</button>*/}
-            {/*<hr/>*/}
-            {/*<div>Dima</div>*/}
-            {/*<div>{playerCounter2}</div>*/}
-            {/*<button onClick={() => {*/}
-            {/*    playCounter2((actual)=> actual + 1)*/}
-            {/*}}>+*/}
-            {/*</button>*/}
-            {/*<hr/>*/}
-            {/*<button onClick={() => {*/}
-            {/*    playCounter1((actual)=> actual - 1)*/}
-            {/*    playCounter2((actual)=> actual - 1)*/}
-            {/*}}>-*/}
-            {/*</button>*/}
-
+            clock: {clock}
         </div>
     );
 }
+
+console.log((1).toString())
 
 export default App;
 

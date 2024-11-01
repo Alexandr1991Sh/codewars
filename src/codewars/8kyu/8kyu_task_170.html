@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function dutyFree(normPrice, discount, hol) {
+        return Math.floor(hol / (normPrice * discount / 100))
+    }
+
+    console.log(dutyFree(12, 50, 1000))     // 166
+
+</script>
+</body>
+</html>

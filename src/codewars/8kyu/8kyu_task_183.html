@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function reverse(string) {
+        let words = string.split(' ')
+        let firstWords = words[0]
+        let lastWords = words[words.length - 1]
+        let str = words.slice(1, words.length - 1)
+        return `${lastWords} ${str.join(' ')} ${firstWords}`
+    }
+
+
+    console.log(reverse('I am an expert at this'))      // 'this at expert an am I'
+    console.log(reverse("Hello World"))                 // "World Hello"
+    console.log(reverse("Hi There."))                   // "There. Hi"
+
+
+</script>
+</body>
+</html>

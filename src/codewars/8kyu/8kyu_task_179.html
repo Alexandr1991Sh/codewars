@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+
+    function foo(){
+        console.log(this.name)
+    }
+
+    const a = {name: 'Alex'}
+    const b= {name: 'Dima'}
+
+    const bindedFooA = foo.bind(a)()
+    const bindedFooB = foo.bind(b)()
+
+    function foo2(age,city){
+        console.log(`${this.name}, ${age}, ${city}`)
+    }
+
+    const c = {name: 'Alex'}
+    const d= {name: 'Dima'}
+
+    const bindedFooC = foo2.bind(c,18)('Ekb')
+    const bindedFooD = foo2.bind(d,33)('Moskow')
+
+
+
+</script>
+</body>
+</html>

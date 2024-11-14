@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function twoHighest(array) {
+
+        let arr = [...new Set(array)]
+        let oneMaxNum = 0
+        let twoMaxNum = 0
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > oneMaxNum) {
+                oneMaxNum = arr[i]
+            }
+            if (arr[i] > twoMaxNum && arr[i] < oneMaxNum) {
+                twoMaxNum = arr[i]
+            }
+        }
+
+        if (arr.length === 1) {
+            return arr
+        } else if (arr.length === 0) {
+            return []
+        } else {
+            return [(oneMaxNum > twoMaxNum ? oneMaxNum : twoMaxNum), (oneMaxNum < twoMaxNum ? oneMaxNum : twoMaxNum)]
+        }
+
+    }
+
+    console.log(twoHighest([15]))                   // [15]
+    console.log(twoHighest([15, 20, 20, 17]))       //  [20, 17]
+    console.log(twoHighest([]))                     // []
+
+</script>
+</body>
+</html>

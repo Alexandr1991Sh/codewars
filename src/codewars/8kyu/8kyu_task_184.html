@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function findAverage(array) {
+        return array.length === 0 ? 0 : array.reduce((acc, val) => acc + val) / array.length
+    }
+
+    console.log(findAverage([1, 2, 3, 4]))     // 2.5
+    console.log(findAverage([1, 2, 3]))     // 2
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function getTheVowels(s) {
+        const vowels = 'aeiou';
+        let expectedIndex = 0;
+        let count = 0;
+
+        for (let char of s) {
+            if (char === vowels[expectedIndex]) {
+                count++;
+                expectedIndex++;
+                if (expectedIndex === vowels.length) {
+                    expectedIndex = 0; // Сброс, если достигли 'u'
+                }
+            }
+        }
+
+        return count;
+    }
+
+
+</script>
+</body>
+</html>

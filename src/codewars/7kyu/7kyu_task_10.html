@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function robberEncode(sentence) {
+        let str = 'BCDFGHJKLMNPQRSTVWXYZ'
+        let result = []
+
+        for (let el of sentence) {
+            if (str.includes(el.toUpperCase())) {
+                result.push(el, el.toLowerCase() ? 'o' : 'O', el)
+            } else {
+                result.push(el)
+            }
+        }
+
+        return result.join('')
+    }
+
+    console.log(robberEncode("S.O.S"))              //  "SOS.O.SOS"
+    console.log(robberEncode("hell world"))        //  "hohelollolo wowororloldod"
+    console.log(robberEncode('foo bar'))            //  'fofoo bobaror'
+
+
+</script>
+</body>
+</html>

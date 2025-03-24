@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function lastSurvivor(letters, coords) {
+       let arr = letters.split('')
+
+        for (let i = 0; i < coords.length; i++) {
+            arr.splice(coords[i], 1)
+        }
+
+        return arr[0]
+    }
+
+
+
+    console.log(lastSurvivor('kbc', [0, 1]))        //'b'
+    console.log(lastSurvivor('zbk', [2, 1]))        //'z'
+    console.log(lastSurvivor('abc', [1, 1]))        //'a'
+    console.log(lastSurvivor('c', []))              //'c'
+
+
+</script>
+</body>
+</html>

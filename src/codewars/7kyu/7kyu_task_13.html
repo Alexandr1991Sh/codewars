@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function counter() {
+        let a = 1
+        const foo = () => a++
+        return foo
+    }
+
+
+
+    const newCounter = counter();
+    console.log(newCounter())
+    console.log(newCounter())
+    console.log(newCounter())
+
+
+</script>
+</body>
+</html>

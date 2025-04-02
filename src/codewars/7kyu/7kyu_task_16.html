@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function dotCalculator(equation) {
+        const parts = equation.split(' ')
+        const left = parts[0]
+        const operator = parts[1]
+        const right = parts[2]
+
+    if(operator === '+') {
+        let result = left.length + right.length
+        return result > 0 ? '.'.repeat(result) : ''
+    }
+
+        if(operator === '*') {
+            let result = left.length * right.length
+            return result > 0 ? '.'.repeat(result) : ''
+        }
+
+        if(operator === '-') {
+            let result = left.length - right.length
+            return result > 0 ? '.'.repeat(result) : ''
+        }
+
+        if (operator === '//') {
+            if (right.length === 0) {
+                return ''
+            }
+            const result = Math.floor(left.length / right.length)
+            return '.'.repeat(result)
+        }
+    }
+
+    console.log(dotCalculator('..... * ..'))        //".........."
+    console.log(dotCalculator('..... - ...'))        //".."
+    console.log(dotCalculator('..... / ..'))        //".."
+    console.log(dotCalculator('. / ..'))        //""
+
+
+</script>
+</body>
+</html>

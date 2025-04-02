@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function countSalutes(hallway) {
+        let resL = 0
+        let salutes = 0
+        for (let char of hallway) {
+            if (char === '<') {
+                salutes += resL * 2
+            } else if (char === '>') {
+                resL++
+            }
+        }
+        return salutes
+    }
+
+    console.log(countSalutes('<---->---<---<-->'))      //4
+    console.log(countSalutes('------'))                 //0
+    console.log(countSalutes('>>>>>>>>>>>>>>>>>>>>>----<->'))   // 42
+    console.log(countSalutes('<<----<>---<'))       //2
+    console.log(countSalutes('>'))                  //0
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function twoArePositive(a, b, c) {
+        let resA = a > 0 ? 1 : 0
+        let resB = b > 0 ? 1 : 0
+        let resC = c > 0 ? 1 : 0
+        let countTrue = resA + resB + resC
+        return countTrue === 2
+    }
+
+    console.log(twoArePositive(2, 4, -3))       //true
+    console.log(twoArePositive(4, -6, 9))       //true
+    console.log(twoArePositive(4, 6, 10))       //false
+    console.log(twoArePositive(-14, -3, -4))    //false
+    console.log(twoArePositive(-4, 6, 0))       //false
+
+</script>
+</body>
+</html>

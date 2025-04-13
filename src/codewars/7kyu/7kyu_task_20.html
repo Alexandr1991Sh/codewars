@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 7kyu</title>
+</head>
+<body>
+<script>
+
+    function separateTypes(input) {
+
+        const result = {
+            number: [],
+            string: [],
+            boolean: []
+        }
+
+        input.forEach(el => {
+            if (typeof el === 'number') {
+                result.number.push(el)
+            } else if (typeof el === 'string') {
+                result.string.push(el)
+            } else if (typeof el === 'boolean') {
+                result.boolean.push(el)
+            }
+        })
+
+        Object.keys(result).forEach(key => {
+            if (result[key].length === 0) {
+                delete result[key];
+            }
+        });
+
+        return result
+    }
+
+    console.log(separateTypes(['a', 1, 2]))                // {number: [1, 2],  string: ['a']}
+    console.log(separateTypes(['a', 1, 2, false, 'b']))     // {number: [1, 2],  string: ['a', 'b'], boolean: [false]}
+
+</script>
+</body>
+</html>

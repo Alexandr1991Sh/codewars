@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let s = 1
+
+    function factorial(num) {
+        if (num === 0) return
+        s = s * num
+        factorial(num - 1)
+    }
+
+    factorial(3)
+    console.log(s)
+
+</script>
+</body>
+</html>

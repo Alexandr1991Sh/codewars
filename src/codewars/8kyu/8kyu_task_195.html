@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // var min = function (list) {
+    //     return Math.min(...list)
+    // }
+    //
+    // var max = function (list) {
+    //     return Math.max(...list)
+    // }
+
+    // var min = function (list) {
+    //     let num = 0
+    //     for (let i = 0; i < list.length; i++) {
+    //        if (list[i] < num) {
+    //            num = list[i]
+    //        }
+    //     }
+    //     return num
+    // }
+    //
+    // var max = function (list) {
+    //     let num = 0
+    //     for (let i = 0; i < list.length; i++) {
+    //         if (list[i] > num) {
+    //             num = list[i]
+    //         }
+    //     }
+    //     return num
+    // }
+
+    var min = function (list) {
+        return list.reduce((acc, item) => (acc < item ? acc : item), 0)
+    }
+
+    var max = function (list) {
+        return list.reduce((acc, item) => (acc > item ? acc : item), 0)
+    }
+
+    console.log(min([-52, 56, 30, 29, -54, 0, -110]))   // -110
+    console.log(min([42, 54, 65, 87, 0]))       // 0
+
+    console.log(max([4, 6, 2, 1, 9, 63, -134, 566]))   // 566
+    console.log(max([5]))       // 5
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // Объединить отсортированные массивы, чтобы из двух массивов получился один со всеми данными - отсортированными по возрастанию
+    // По условию 2 массива и a и b - всегда отсортированны изначально по возрастанию
+    const a = [1, 3, 5];
+    const b = [2, 4, 6, 7];
+
+    const sortArrays = (a, b) => {
+        const result = []
+
+        result.push(...a, ...b)
+
+        new Set(result)
+
+     return result.sort()
+    }
+
+    console.log(sortArrays(a, b));
+
+
+</script>
+</body>
+</html>

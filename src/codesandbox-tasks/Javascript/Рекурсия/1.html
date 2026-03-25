@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Преобразовать вложенный объект в flat-структуру
+    const tree = {
+        a: {
+            b: "two",
+            c: {
+                d: "one",
+            },
+        },
+    };
+
+    const treeFn = (tree, parentKey = "") => {
+        let result = {};
+
+        for (let key in tree) {
+            let newKey = parentKey ? `${parentKey}.${key}` : key;
+
+            if (typeof tree[key] === "object") {
+                Object.assign(result, treeFn(tree[key], newKey));
+            } else {
+                result[newKey] = tree[key];
+            }
+        }
+
+        return result;
+    };
+
+    console.log(treeFn(tree));
+    // console.log(JSON.parse(treeFn(tree)));
+    //    {
+    //     'a.b': 'two',
+    //     'a.c.d': 'one'
+    //    }
+
+
+</script>
+</body>
+</html>

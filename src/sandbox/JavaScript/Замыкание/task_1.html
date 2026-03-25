@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="button">Кликни меня</button>
+<script>
+
+
+    // - Что выведется в консоль; - Варианты, как исправить;
+
+    const button = document.getElementById("button");
+
+    for (var i = 0; i < 3; i++) {
+        button.addEventListener("click", function (e) {
+            console.log(i);
+        });
+    }
+
+    button.click();
+
+
+    console.log(twoArePositive(4, 6, 10))
+
+</script>
+</body>
+</html>

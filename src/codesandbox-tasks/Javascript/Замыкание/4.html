@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Похожая на предыдущую
+    // Что будет выведено в консоль?
+    function createIncrement() {
+        let count = 0;
+
+        function increment() {
+            count++;
+        }
+
+        let message = `Count is ${count}`;
+
+        function log() {
+            console.log(message);
+            console.log(`Count is ${count}`);
+        }
+
+        return [increment, log];
+    }
+
+    const [increment, log] = createIncrement();
+    increment();
+    increment();
+    increment();
+    log(); // что выведет и какая у нас проблема
+
+
+</script>
+</body>
+</html>

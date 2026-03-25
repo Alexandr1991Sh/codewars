@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const removeRepeats = (str) => {
+        let result = "";
+        let prev = "";
+
+        for (let i = 0; i < str.length; i++) {
+            const cur = str[i];
+            prev = str[i - 1]?.toLowerCase();
+
+            if (cur !== prev) {
+                result += cur;
+            }
+        }
+
+        return result;
+    };
+
+    console.log(
+        removeRepeats("Кккоооот Бааарссиккк зззапрыыгнннул наааа   зааабоооррррр")
+    );
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const lengthOfLastWord = function (s) {
+        const worlds = s.trim().split(' ')
+        return  worlds[worlds.length - 1].length
+    }
+
+    console.log(lengthOfLastWord("Hello World"))                  // 5
+    console.log(lengthOfLastWord("fly me to the moon"))           // 4
+    console.log(lengthOfLastWord("luffy is still joyboy"))        // 6
+    console.log(lengthOfLastWord("отправь меня на луну"))        // 4
+
+</script>
+</body>
+</html>

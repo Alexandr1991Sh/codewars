@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Рекурсивно просуммировать все цифры
+    const obj = {
+        a: 1,
+        b: {
+            c: 3,
+            d: -10,
+            e: {
+                f: {
+                    g: 1,
+                },
+            },
+        },
+    };
+    let res = 0
+
+    function sumRecursive(obj) {
+        for (let key in obj) {
+        if(!obj[key]) return
+
+        }
+
+        sumRecursive()
+    }
+
+    sumRecursive(obj);
+
+    console.log(res)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /**
+     Получив массив строк strs, сгруппируйте анаграммы вместе. Вы можете вернуть ответ в любом порядке.
+     Анаграмма - это слово или фраза, образованные путем перестановки букв другого слова или фразы. tea => eat
+     */
+    const groupAnagrams = (arr) => {
+        const groups = {}
+
+        arr.forEach(word => {
+            const sorted = word.split('').sort().join('')
+            if (!groups[sorted]) {
+                groups[sorted] = []
+            }
+            groups[sorted].push(word)
+        })
+        return Object.values(groups)
+    };
+
+    console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])); // [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+
+</script>
+</body>
+</html>

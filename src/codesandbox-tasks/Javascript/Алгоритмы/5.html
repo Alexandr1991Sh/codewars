@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /**  Условие задачи:
+     Напишите функцию checkBrackets(str), которая принимает строку содержащую скобки трех видов: (), {}, [].
+     Функция должна вернуть true, если скобки в строке закрыты и вложены корректно, и false в противном случае.
+     */
+
+// Стартовый код:
+
+    function checkBrackets(str) {
+        const stack = []
+        const bracketsMap = {'}': '{', ']': '[', ')': '('}
+
+        for (const char of str) {
+            {
+                if (['[', '(', '{'].includes(char)) {
+                    stack.push(char)
+                } else if (char in bracketsMap) {
+                    if (stack.pop() !== bracketsMap[char]) {
+                        return false
+                    }
+                }
+            }
+        }
+        return stack.length === 0
+    }
+
+    // Примеры использования
+    console.log(checkBrackets("{Hi(good day)!}")); // true
+    console.log(checkBrackets("{nice[day}")); // false
+    console.log(checkBrackets("(delicious[food])")); // true
+
+
+</script>
+</body>
+</html>

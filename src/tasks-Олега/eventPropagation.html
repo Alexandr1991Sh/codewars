@@ -1,0 +1,22 @@
+<div>
+    <div id="div1" onclick="console.log('1')">
+        <div onclick="console.log('2');" id="div2">
+            <button onclick="console.log('3');">Click</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function foo4() {
+        console.log('4')
+    }
+
+    function foo5() {
+        console.log('5')
+    }
+
+    div1.addEventListener("click", foo4);
+    div2.addEventListener("click", foo5);
+</script>
+
+<!--3 2 5 1 4-->

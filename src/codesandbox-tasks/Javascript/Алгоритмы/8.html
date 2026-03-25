@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+Функция принимает массив чисел (не сортированный) и возвращает строку, представляющую собой диапазоны чисел, разделенные запятыми.
+Каждый диапазон представлен в формате a-b, где a — начало диапазона, а b — конец диапазона.
+Если диапазон состоит из одного числа, он представлен как a.
+
+ Пример: getRanges([1,2,5,10,6,7,8,11,13,0,17]) => '0-2,5-8,10-11,13,17'
+*/
+
+    function getRanges1(arr) {
+        arr.sort((a, b) => a - b);
+
+        const ranges = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            const value = arr[i];
+            const previousPossibleValue = arr[i] - 1;
+
+            if (arr.indexOf(previousPossibleValue) === -1) {
+                let end = value;
+
+                while (arr.indexOf(end + 1) !== -1) {
+                    end++;
+                }
+
+                if (value === end) {
+                    ranges.push(value);
+                } else {
+                    ranges.push(`${value}-${end}`);
+                }
+            }
+        }
+
+        return ranges.join(",");
+    }
+
+    console.log(getRanges1([1, 2, 5, 10, 6, 7, 8, 11, 13, 0, 17]));
+    // 0-2,5-6,8-11,13
+
+    // ========== За один проход
+    function getRanges2(arr) {
+        arr.sort((a, b) => a - b); // Sort the array in ascending order
+
+        let ranges = [];
+        let start = arr[0]; // 8
+        let end = arr[0]; // 8
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] === end + 1) {
+                end = arr[i];
+            } else {
+                ranges.push(start === end ? `${start}` : `${start}-${end}`);
+                start = arr[i];
+                end = arr[i];
+            }
+        }
+
+        ranges.push(start === end ? `${start}` : `${start}-${end}`);
+
+        return ranges.join(",");
+    }
+
+    console.log(getRanges2([1, 2, 5, 10, 6, 7, 8, 11, 13, 0, 17]));
+
+</script>
+</body>
+</html>

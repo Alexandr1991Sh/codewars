@@ -1,0 +1,38 @@
+// Реализуйте функцию customMap(array, callback),
+// которая имитирует поведение метода массива .map().
+// Функция должна принимать массив и колбэк функцию, которая применяется
+// к каждому элементу массива,
+// результаты выполнения колбэк функции формируют новый массив.
+
+function customMap(array, callback) {
+    const result = []
+
+    for (let i = 0; i < array.length; i++) {
+        result.push(callback(array[i], i, array))
+    }
+
+    return result
+}
+
+// Пример использования
+const numbers = [1, 2, 3, 4];
+const doubled = customMap(numbers, (num) => num * 2);
+console.log(doubled); // [2, 4, 6, 8]
+
+
+//===================================
+function customFilter(array, callback) {
+    const result = [];
+
+    for (let i = 0; i < array.length; i++) {
+        const cur = array[i];
+
+        if (callback(cur, i, array)) result.push(cur);
+    }
+
+    return result;
+}
+
+// Пример использования
+console.log(customFilter(numbers, (el, id) => el > 2)); // [3,4]
+

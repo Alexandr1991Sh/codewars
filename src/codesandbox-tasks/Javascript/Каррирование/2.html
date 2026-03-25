@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Бесконечное каррирование
+
+    const sum = (x) => {
+        const fn = (y) => {
+            if (y === undefined) {
+                return x
+            }
+            return sum(x + y)
+        }
+        return fn
+    }
+
+
+
+    console.log(sum(1)()) // 1
+    console.log(sum(1)(2)(3)()) // 6
+
+
+</script>
+</body>
+</html>

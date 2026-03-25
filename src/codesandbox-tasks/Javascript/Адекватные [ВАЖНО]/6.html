@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // реализовать Polyfill для метода bind(), который может вызываться в любой функции (чтобы был в прототипе функции)
+
+    Function.prototype.myBind = function (context, ...args) {
+        let fn = this;
+
+        return function () {
+            return fn.apply(context, args);
+        };
+    };
+
+    function hello(gritting) {
+        console.log(gritting + ', ' + this.name)
+    }
+
+    const arr = {name: 'Alisa'}
+
+    const bindHello = hello.bind(arr, 'Hello')
+
+    bindHello()
+
+
+</script>
+</body>
+</html>

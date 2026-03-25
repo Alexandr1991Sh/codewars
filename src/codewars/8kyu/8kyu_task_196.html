@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // на вход подаётся строка только из символов скобок
+    // является ли последовательность скобок валидной?
+
+    function isValidBrackets(str) {
+        let brackets = {')': '(', ']': '[', '}': '{'}
+
+        let hash = new Map()
+
+        for (let el of str) {
+            if ('({['.include(el)) {
+                hash.set(el, hash.get(el) ? (hash.get(el) + 1) : 1)
+            } else {
+                let openCount = hash.get(brackets[el])
+                if (!openCount) {
+                    return false
+                } else {
+                     hash.set(brackets[el],openCount - 1)
+                }
+            }
+        }
+        return true
+    }
+
+    console.log(isValidBrackets('()')) // true
+    console.log(isValidBrackets('()[]{}'))      // true
+    console.log(isValidBrackets('([])'))   // true
+    console.log(isValidBrackets(']'))  //false
+    console.log(isValidBrackets('(['))  //false
+
+</script>
+</body>
+</html>

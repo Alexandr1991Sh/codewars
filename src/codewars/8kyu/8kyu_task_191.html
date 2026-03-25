@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const arr = [1, 2, 3, 4, 5]
+
+    const pr1 = new Promise((res, rej) => {
+        setTimeout(res, 1000, 'Hello World!')
+    })
+
+    const pr2 = Promise.resolve(arr)
+    const pr3 = '123'
+
+    Promise.all([pr1, pr2, pr3]).then(value => {
+        console.log(value)
+    })
+
+
+    console.log(pr2.__proto__ === Promise.prototype)
+
+</script>
+</body>
+</html>

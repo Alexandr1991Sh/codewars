@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+      debounce(f, ms) – это обёртка, которая откладывает вызовы cb,
+      пока не пройдёт ms миллисекунд бездействия
+      **/
+    const debounce = (cb, ms) => {
+        let timer
+
+        return (...args) => {
+            if (timer) clearTimeout(timer)
+            timer = setTimeout(() => {
+                cb(...args)
+            }, ms)
+        }
+    };
+
+    const deb = debounce((v) => console.log(v), 500);
+
+    // должно вывести только 777999
+    console.log(deb(1))
+    console.log(deb(2))
+    console.log(deb(777999))
+
+
+</script>
+</body>
+</html>

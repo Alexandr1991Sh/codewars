@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const isValid = function (s) {
+        const brackets = {')': '(', '}': '{', ']': '['}
+
+        const stack = []
+
+        for (let char of s) {
+            if (Object.values(brackets).includes(char)) {
+                // Если символ — открывающая скобка
+                stack.push(char);
+            } else if (Object.keys(brackets).includes(char)) {
+                // Если закрывающая скобка
+                if (stack.pop() !== brackets[char]) {
+                    return false;
+                }
+            }
+        }
+        return stack.length === 0; // Все скобки закрыты
+    };
+
+    console.log(isValid('(){}'))        //true
+    console.log(isValid('(){}[]'))        //true
+    console.log(isValid('({)'))        //false
+    console.log(isValid('({)}]'))        //false
+
+</script>
+</body>
+</html>

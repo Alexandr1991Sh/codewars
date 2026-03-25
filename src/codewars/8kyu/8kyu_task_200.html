@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const removeDuplicates = function(nums) {
+        let k = 0; // счетчик уникальных элементов
+        for (let i = 0; i < nums.length; i++) {
+            if (i === 0 || nums[i] !== nums[i - 1]) {
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        // Заполняем остальные позиции '_'
+        for (let i = k; i < nums.length; i++) {
+            nums[i] = '_';
+        }
+        return k;
+    };
+
+    console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))        // [0,1,2,3,4,_,_,_,_,_]
+    console.log(removeDuplicates([1, 1, 2]))                             // [1,2,_]
+
+</script>
+</body>
+</html>

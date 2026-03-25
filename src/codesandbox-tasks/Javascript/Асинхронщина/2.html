@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Сделать аналог Promise.all и Promise.allSettled
+
+    const promiseAll = (proms) => {
+        const result = [];
+        let count = 0;
+
+        return new Promise((resolve, reject) => {
+            proms.forEach((pr, idx) => {
+                pr.then((res) => {
+                    result[idx] = res;
+                    count += 1;
+                    if (count === proms.length) resolve(result);
+                }).catch(reject);
+            });
+        });
+    };
+
+    promiseAll([
+        new Promise((res) => res("promise1")),
+        new Promise((res) => res("promise2")),
+        new Promise((res) => res("promise3")),
+    ]).then((res) => console.log(res));
+
+    //=======================
+    const promiseAllSettled = async (promises) => {
+        return new Promise((resolve, reject) => {
+            const result = new Array(promises.length);
+
+            let finishedPomisesCount = 0;
+
+            for (let index in promises) {
+                let tempPromiseResult = null;
+                promises[index]
+                    .then((data) => {
+                        tempPromiseResult = { status: "fulfilled", value: data };
+                    })
+                    .catch((data) => {
+                        tempPromiseResult = { status: "rejected", reason: data };
+                    })
+                    .finally(() => {
+                        result[index] = tempPromiseResult;
+                        finishedPomisesCount++;
+
+                        if (promises.length === finishedPomisesCount) {
+                            resolve(result);
+                        }
+                    });
+            }
+        });
+    };
+
+
+
+</script>
+</body>
+</html>

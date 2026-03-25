@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Проверить, что все скобкки в строке валидны
+
+    const checkBrackets = (str) => {
+        const brackets = {']': '[', '}': '{', ')': '('}
+        const stack = []
+
+        for (let el of str) {
+            if (el === '[' || el === '{' || el === '(') {
+                stack.push(el)
+            } else if (el === ']' || el === '}' || el === ')') {
+                if (stack.length === 0 || stack.pop() !== brackets[el]) {
+                    return false
+                }
+            }
+        }
+
+        return stack.length === 0
+    };
+
+    console.log(checkBrackets("[[((]]))"));
+    console.log(checkBrackets("[)"));
+    console.log(checkBrackets("))[[()()]]"));
+    console.log(checkBrackets("[[]](((([[]]))))"));
+    console.log(checkBrackets("[]"));
+
+</script>
+</body>
+</html>
+

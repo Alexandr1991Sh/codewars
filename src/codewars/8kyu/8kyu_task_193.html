@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function isPalindrome(x) {
+        let xLowerCase = x.toLowerCase()
+        return xLowerCase === xLowerCase.split('').reverse().join('')
+    }
+
+    console.log(isPalindrome('q'))
+    console.log(isPalindrome('ava'))
+    console.log(isPalindrome('abaSS'))
+
+</script>
+</body>
+</html>

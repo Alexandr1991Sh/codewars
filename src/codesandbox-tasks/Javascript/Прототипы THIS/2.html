@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Что будет выведено и как это исправить?
+    let obj = {
+        name: "David",
+        getName() {
+            console.log(`name is: ${this.name}`);
+        },
+    };
+
+    let fn = obj.getName;
+
+    fn();
+
+
+</script>
+</body>
+</html>

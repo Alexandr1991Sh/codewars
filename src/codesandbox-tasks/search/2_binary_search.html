@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    const array = [1, 2, 4, 7, 9, 3, 8, 6, 12, 13, 14, 15, 156, 567];
+
+    let count = 0;
+
+    const binarySearch = (arr, num) => {
+        let start = 0;
+        let end = arr.length - 1;
+
+        while (start <= end) {
+            count += 1;
+            const middle = Math.floor((start + end) / 2);
+
+            if (arr[middle] === num) {
+                return middle; // нашли индекс
+            }
+            if (num < arr[middle]) {
+                end = middle - 1; // ищем левее
+            } else {
+                start = middle + 1; // ищем правее
+            }
+        }
+        return -1; // не нашли
+    };
+
+    console.log(binarySearch(array, 7));
+    console.log('count = ', count);
+
+
+
+</script>
+</body>
+</html>

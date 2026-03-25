@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // написать функцию для создания задержки
+
+    function sleep(time = 100) {
+        return new Promise((res, rej)=>{
+            setTimeout(()=>{
+                res('qwe')
+            },time)
+        }).then((res)=>{
+            console.log(res)
+        })
+    }
+
+    sleep(1000)
+
+
+</script>
+</body>
+</html>

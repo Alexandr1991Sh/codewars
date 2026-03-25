@@ -1,0 +1,25 @@
+/**
+ Необходимо разработать функцию compressString, которая принимает строку
+ и возвращает её сжатую версию.
+ */
+
+const compressString = (str) => {
+    let res = "";
+    let count = 1;
+
+    for (let i = 0; i < str.length; i++) {
+        const cur = str[i];
+        const next = str[i + 1];
+
+        if (cur === next) {
+            count += 1;
+        } else {
+            count > 1 ? (res += cur + count) : (res += cur);
+            count = 1;
+        }
+    }
+
+    return res;
+};
+
+console.log(compressString("AAAABBBCCF")); // A4B3C2F

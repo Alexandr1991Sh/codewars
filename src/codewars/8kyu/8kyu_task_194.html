@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function correct(str) {
+    //     return str.split('').map(el => {
+    //         if (el === '0') {
+    //             return 'O'
+    //         } else if (el === '1') {
+    //             return 'I'
+    //         } else if (el === '5') {
+    //             return 'S'
+    //         }
+    //         return el
+    //     }).join('')
+    // }
+
+
+    function correct(str) {
+        const replace = {'0': 'O', '1': 'I', '5': 'S'}
+        return str.split('').map(el => replace[el]|| el).join('')
+    }
+
+    console.log(correct("L0ND0N"))  // LONDON
+    console.log(correct("DUBL1N"))  // DUBLIN
+    console.log(correct("PAR15"))  // "PARIS
+
+
+</script>
+</body>
+</html>

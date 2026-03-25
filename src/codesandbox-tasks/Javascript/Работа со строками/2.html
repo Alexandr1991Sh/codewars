@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const fuzzySearch = (substring, arr) => {
+        return arr.filter((string) => {
+            let index = 0;
+
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] === substring[index]) {
+                    index++;
+                } else {
+                    index = 0;
+                }
+
+                if (index === substring.length) {
+                    return true;
+                }
+            }
+
+            return false;
+        });
+    };
+
+    console.log(
+        fuzzySearch("am", ["fuzzy", "maskva", "mama", "search", "am", "utility"])
+    );
+
+
+
+</script>
+</body>
+</html>

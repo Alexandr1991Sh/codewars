@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function customPromiseAny(promises) {
+        // Создаём счётчик промисов
+        let errorPromises = 0;
+        // Создаём пустой массив с длиной равной кол-ву промисов (надо для порядка результатов)
+        const errors = new Array(promises.length);
+
+        return new Promise((resolve, reject) => {
+            // Создаём новый промис, в нём бежим по каждому промису
+            for (let i = 0; i < promises.length; i++) {
+                promises[i]
+                    .then(resolve) // Резолвим главный промис при первом попавшемся резолве дочернего
+                    .catch((error) => {
+                        errors[index] = error;
+                        errorPromises += 1;
+
+                        if (errorPromises === promises.length) {
+                            // Реджектим главный промис если все промисы зареджектились
+                            reject(promiseErrors);
+                        }
+                    });
+            }
+        });
+    }
+
+    customPromiseAny([
+        new Promise((res, rej) => rej("promise1")),
+        new Promise((res) => res("promise2")),
+        new Promise((res) => res("promise3")),
+    ]).then((r) => console.log(r));
+
+
+</script>
+</body>
+</html>
